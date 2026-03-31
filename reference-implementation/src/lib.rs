@@ -36,9 +36,13 @@ pub mod header;
 /// Cipher agility layer
 pub mod cipher;
 
+/// Per-SSRC stream key derivation for RTP
+pub mod per_ssrc_key_derivation;
+
 pub use crate::{
     cipher::{new_cipher, Cipher, CipherSuite, SFrameIntermediateValues},
     header::{Counter, Header, KeyId},
+    per_ssrc_key_derivation::derive_ssrc_key,
 };
 use std::collections::HashMap;
 
