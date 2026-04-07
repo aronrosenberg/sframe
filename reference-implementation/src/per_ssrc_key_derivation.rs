@@ -2,7 +2,7 @@ use hkdf::Hkdf;
 use hmac::SimpleHmac;
 use sha2::{Sha256, Sha512};
 
-/// Derive the per-SSRC stream key for a given SFrame cipher suite.
+/// Derive the per-SSRC stream key for a given SFrame cipher suite as defined in Section 7 of draft-ietf-avtcore-rtp-sframe
 ///
 /// This implements the RTP stream key derivation from the SFrame RTP payload format draft:
 /// ```text
