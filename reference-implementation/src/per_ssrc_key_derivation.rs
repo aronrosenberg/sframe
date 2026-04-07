@@ -22,7 +22,7 @@ pub fn derive_ssrc_key(ssrc: u32, base_key: &[u8], cipher_suite: u16) -> Vec<u8>
 
     match cipher_suite {
         0x0001..=0x0004 => {
-            let (_, h) = Hkdf::<Sha256, SimpleHmac<Sha256>>::extract(Some(&ssrc_salt), base_key);
+            let (_, h) = Hkdf::<Sha256>::extract(Some(&ssrc_salt), base_key);
             let mut key = vec![0u8; 32];
             h.expand(INFO, &mut key).expect("HKDF-Expand failed");
             key
